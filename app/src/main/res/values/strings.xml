@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BirthdayCake</string>
+    <string name="textview">TextView</string>
+    <string name="frosting">Frosting</string>
+    <string name="hooray">HOORAY!!</string>
+    <string name="yay">yay...</string>
+    <string name="candles">Candles</string>
+    <string name="happy_birthday">Happy Birthday</string>
+    <string name="blow_out">Blow Out</string>
+    <string name="goodbye">Goodbye</string>
 </resources>
