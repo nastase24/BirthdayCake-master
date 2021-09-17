@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,9 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
+        CakeView cakeView = findViewById(R.id.cakeview);
+        CakeController cakeController = new CakeController(cakeView);
+        Button blowOutButton = findViewById(R.id.blowOutButton);
+        blowOutButton.setOnClickListener(cakeController);
     }
 
     public void goodbye(View button){
-        Log.i("Goodbye");
+        Log.i("GoodbyeButton: ","Goodbye");
     }
 }

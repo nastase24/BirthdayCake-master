@@ -17,6 +17,7 @@ public class CakeView extends SurfaceView {
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
 
+
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
         and adapting to different tablets' screen sizes and resolutions.  I've deliberately
@@ -35,7 +36,7 @@ public class CakeView extends SurfaceView {
     public static final float innerFlameRadius = 15.0f;
 
 
-
+    private CakeModel cakeModel;
     /**
      * ctor must be overridden here as per standard Java inheritance practice.  We need it
      * anyway to initialize the member variables
@@ -46,6 +47,7 @@ public class CakeView extends SurfaceView {
         //This is essential or your onDraw method won't get called
         setWillNotDraw(false);
 
+        cakeModel = new CakeModel();
         //Setup our palette
         cakePaint.setColor(0xFFC755B5);  //violet-red
         cakePaint.setStyle(Paint.Style.FILL);
@@ -124,6 +126,9 @@ public class CakeView extends SurfaceView {
         drawCandle(canvas, cakeLeft + cakeWidth/2 + 10*candleWidth/2, cakeTop);
 
     }//onDraw
+
+    //getter for the classes cakeModel
+    public CakeModel getCakeModel(){ return cakeModel;}
 
 }//class CakeView
 
