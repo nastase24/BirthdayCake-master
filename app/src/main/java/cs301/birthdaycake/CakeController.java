@@ -31,7 +31,7 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-        Log.d("OnProgressChanged", "seekbar progress changed to" + i);
+        Log.d("OnProgressChanged", "seekbar progress changed to " + i);
         cakeModel.numCandles = i;
         cakeView.invalidate();
     }

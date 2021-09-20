@@ -125,8 +125,8 @@ public class CakeView extends SurfaceView {
 
 
         //draw candles for seekbar amount
-        for(int j = 0; j < cakeModel.numCandles; j++) {
-            drawCandle(canvas, cakeLeft + cakeWidth / (j + 1) +  j * candleWidth / 2, cakeTop);
+        for(int j = 0; j < cakeModel.numCandles; j++){
+            drawCandle(canvas, cakeLeft + ( j * cakeWidth) / (cakeModel.numCandles+1) + candleWidth / 2, cakeTop);
             //drawCandle(canvas, cakeLeft + cakeWidth / 2 + 10 * candleWidth / 2, cakeTop);
         }
     }//onDraw
