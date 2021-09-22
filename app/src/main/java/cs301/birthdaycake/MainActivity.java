@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar numCandlesBar = findViewById(R.id.candleSeekBar);
         numCandlesBar.setOnSeekBarChangeListener(cakeController);
 
+        cakeView.setOnTouchListener(cakeController);
     }
 
     public void goodbye(View button){
