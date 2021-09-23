@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
 
 public class CakeView extends SurfaceView {
@@ -17,7 +18,9 @@ public class CakeView extends SurfaceView {
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
 
+    Paint balloonPaint = new Paint();
 
+    public Balloon balloon;
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
         and adapting to different tablets' screen sizes and resolutions.  I've deliberately
@@ -61,6 +64,10 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
+
+        balloonPaint.setColor(Color.BLUE);
+        balloonPaint.setStyle(Paint.Style.FILL);
+
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
@@ -128,11 +135,23 @@ public class CakeView extends SurfaceView {
         for(int j = 0; j < cakeModel.numCandles; j++){
             drawCandle(canvas, cakeLeft + ( j * cakeWidth+ cakeWidth/2) / (cakeModel.numCandles), cakeTop);
             //drawCandle(canvas, cakeLeft + cakeWidth / 2 + 10 * candleWidth / 2, cakeTop);
+
         }
+
+    if(cakeModel.balloonVis) {
+        drawBalloon(canvas, cakeModel.balloonX, cakeModel.balloonY);
+    }
     }//onDraw
 
     //getter for the classes cakeModel
     public CakeModel getCakeModel(){ return cakeModel;}
 
+    //public Balloon getBalloon(){ return balloon; }
+
+    public void drawBalloon(Canvas canvas, float x, float y){
+        //draw string
+        canvas.drawLine(x,y,x,y+200,new Paint(Color.BLACK));
+        canvas.drawOval(x-50,y-100, x+50, y+100, balloonPaint);
+    }
 }//class CakeView
 
