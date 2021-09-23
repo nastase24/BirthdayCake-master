@@ -115,6 +115,9 @@ public class CakeView extends SurfaceView {
     @Override
     public void onDraw(Canvas canvas)
     {
+        if(cakeModel.balloonVis) {
+            drawBalloon(canvas, cakeModel.balloonX, cakeModel.balloonY);
+        }
         if(cakeModel.drawcheckered){
             //bottom right rect
             canvas.drawRect(cakeModel.checkeredX, cakeModel.checkeredY,cakeModel.checkeredX +50,cakeModel.checkeredY + 50,greenPaint);
@@ -156,9 +159,7 @@ public class CakeView extends SurfaceView {
 
         }
 
-    if(cakeModel.balloonVis) {
-        drawBalloon(canvas, cakeModel.balloonX, cakeModel.balloonY);
-    }
+
     }//onDraw
 
     //getter for the classes cakeModel
