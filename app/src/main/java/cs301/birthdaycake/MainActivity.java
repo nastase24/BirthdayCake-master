@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         cakeView.setOnTouchListener(cakeController);
 
+
     }
 
     public void goodbye(View button){

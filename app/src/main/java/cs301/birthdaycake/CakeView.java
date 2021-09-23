@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CakeView extends SurfaceView {
 
@@ -17,6 +18,8 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+    Paint redPaint = new Paint();
+    Paint greenPaint = new Paint();
 
     Paint balloonPaint = new Paint();
 
@@ -52,6 +55,10 @@ public class CakeView extends SurfaceView {
 
         cakeModel = new CakeModel();
         //Setup our palette
+        redPaint.setColor(0xFFFF0000);
+        redPaint.setStyle(Paint.Style.FILL);
+        greenPaint.setColor(0xFF00FF00);
+        greenPaint.setStyle(Paint.Style.FILL);
         cakePaint.setColor(0xFFFF0000);  //red
         cakePaint.setStyle(Paint.Style.FILL);
         frostingPaint.setColor(0xFFFFFACD);  //pale yellow
@@ -108,6 +115,17 @@ public class CakeView extends SurfaceView {
     @Override
     public void onDraw(Canvas canvas)
     {
+        if(cakeModel.drawcheckered){
+            //bottom right rect
+            canvas.drawRect(cakeModel.checkeredX, cakeModel.checkeredY,cakeModel.checkeredX +50,cakeModel.checkeredY + 50,greenPaint);
+            //top right rect
+            canvas.drawRect(cakeModel.checkeredX, cakeModel.checkeredY,cakeModel.checkeredX +50,cakeModel.checkeredY - 50,redPaint);
+            //top left rect
+            canvas.drawRect(cakeModel.checkeredX, cakeModel.checkeredY,cakeModel.checkeredX -50,cakeModel.checkeredY - 50,greenPaint);
+            //bottom left rect
+            canvas.drawRect(cakeModel.checkeredX, cakeModel.checkeredY,cakeModel.checkeredX -50,cakeModel.checkeredY + 50,redPaint);
+
+        }
         //top and bottom are used to keep a running tally as we progress down the cake layers
         float top = cakeTop;
         float bottom = cakeTop + frostHeight;
