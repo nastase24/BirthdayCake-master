@@ -73,9 +73,12 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
-
         balloonPaint.setColor(Color.BLUE);
         balloonPaint.setStyle(Paint.Style.FILL);
+        cakeSize.setTextSize(70);
+        cakeSize.setColor(0xFFFF0000);
+        //setting the red letter size
+
 
 
         setBackgroundColor(Color.WHITE);  //better than black default
@@ -87,7 +90,7 @@ public class CakeView extends SurfaceView {
      * the position of the bottom left corner of the candle
      */
     public void drawCandle(Canvas canvas, float left, float bottom) {
-        canvas.drawText("" + cakeModel.textX + "," + cakeModel.textY,cakeModel.textX,cakeModel.textY - 65,cakeSize);
+        canvas.drawText("" + cakeModel.textX + "," + cakeModel.textY,90,100,cakeSize);
         if(cakeModel.candlesVisible){
         canvas.drawRect(left, bottom - candleHeight, left + candleWidth, bottom, candlePaint);
             //draw the outer flame
