@@ -8,4 +8,7 @@ public class CakeModel {
     float checkeredY = 0;
     boolean drawcheckered = false;
     int numCandles = 2;
+    float textY= 0;
+    float textX= 0;
 }
+
