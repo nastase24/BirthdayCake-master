@@ -11,6 +11,8 @@ public class CakeModel {
     float balloonX;
     float balloonY;
     boolean balloonVis = false;
+    float textY;
+    float textX;
     int numCandles = 2;
 
     float textX = 0;
