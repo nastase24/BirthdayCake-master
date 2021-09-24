@@ -56,6 +56,8 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
             cakeModel.checkeredX = event.getX();
             cakeModel.checkeredY = event.getY();
             cakeModel.drawcheckered = true;
+            cakeModel.textX = event.getX();
+            cakeModel.textY = event.getY();
             cakeView.invalidate();
             return true;
 
