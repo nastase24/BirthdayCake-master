@@ -23,6 +23,7 @@ public class CakeView extends SurfaceView {
 
     Paint balloonPaint = new Paint();
     Paint cakeSize = new Paint();
+
     //creating paint object
 
 
@@ -57,6 +58,7 @@ public class CakeView extends SurfaceView {
 
         cakeModel = new CakeModel();
         //Setup our palette
+
         redPaint.setColor(0xFFFF0000);
         redPaint.setStyle(Paint.Style.FILL);
         greenPaint.setColor(0xFF00FF00);
@@ -83,6 +85,7 @@ public class CakeView extends SurfaceView {
      * the position of the bottom left corner of the candle
      */
     public void drawCandle(Canvas canvas, float left, float bottom) {
+        canvas.drawText("" + cakeModel.textX + "," + cakeModel.textY,cakeModel.textX,cakeModel.textY - 65,cakeSize);
         if(cakeModel.candlesVisible){
         canvas.drawRect(left, bottom - candleHeight, left + candleWidth, bottom, candlePaint);
             //draw the outer flame
