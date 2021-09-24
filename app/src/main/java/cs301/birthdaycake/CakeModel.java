@@ -7,6 +7,11 @@ public class CakeModel {
     float checkeredX = 0;
     float checkeredY = 0;
     boolean drawcheckered = false;
+    boolean newBalloon = false;
+    float balloonX;
+    float balloonY;
+    boolean balloonVis = false;
+
     int numCandles = 2;
     float textY= 0;
     float textX= 0;
