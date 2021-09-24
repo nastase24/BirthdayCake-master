@@ -11,6 +11,6 @@ public class CakeModel {
     float balloonX;
     float balloonY;
     boolean balloonVis = false;
-
     int numCandles = 2;
+
 }
