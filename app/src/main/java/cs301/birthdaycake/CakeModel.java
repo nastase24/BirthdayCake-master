@@ -13,4 +13,7 @@ public class CakeModel {
     boolean balloonVis = false;
     int numCandles = 2;
 
+    float textX = 0;
+    float textY = 0;
+    boolean isText = false;
 }
